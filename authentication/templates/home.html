@@ -1,0 +1,45 @@
+{% extends 'index.html' %} {% block content %} {% load static %}
+<div class="heading-main pt-3">
+  <center><h2>QuizApp</h2></center>
+</div>
+<div class="container homepage  ">
+  <div class="row justify-content-center align-items-center">
+  <div class="col-md ">
+    <img class="img-fluid" src="{% static 'images/undraw_quiz.svg' %}" />
+  </div>
+  <div class="col-md">
+    <ul class="u-list-home align-center">
+      <h5>Features:</h5>
+      <li>Student can to Attend Quiz</li>
+      <li>Staff can Manage the Quizzess</li>
+      <li>Admin (Superuser) can Manage the Staff and Quizzes</li>
+    </ul>
+  </div>
+</div>
+</div>
+<div class="container text-center pb-3 ">
+  {% if not user.is_authenticated %}
+  <div class="row d-block">
+    <a href="{% url 'login' %}" class="btn log-re-btn">Login</a>
+    <span class="text-white"><b>Or</b></span>
+    <a href="{% url 'registration' %}" class="btn log-re-btn">Register</a>
+  </div>
+  {% endif %}
+</div>
+<!-- Footer -->
+
+<!-- Copyright -->
+<div class="footer-copyright text-center text-white">
+  Made With <i class="fas fa-heart animated tada infinite"></i> by
+  <a
+    href="https://sathiyanarayanan-m.github.io/"
+    target="_blank"
+    style="color: #878cf5"
+  >
+    Sathiyanarayanan</a
+  >
+</div>
+<!-- Copyright -->
+
+<!-- Footer -->
+{% endblock %}
